@@ -1,5 +1,5 @@
 //inicializar Parse server
-Parse.initialize("b35lgkYap3akNSA8HbSktYR45xOahVTaufZT5g6D", "t32epDtIHkNupYo0rCVSQhDoKNElJxVj4Pi5KVol"); 
+Parse.initialize("b35lgkYap3akNSA8HbSktYR45xOahVTaufZT5g6D", "t32epDtIHkNupYo0rCVSQhDoKNElJxVj4Pi5KVol");
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 // Create a new User
@@ -16,9 +16,8 @@ async function createParseUser() {
     if (user !== null) {
       // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
       alert(
-        `New object created with success! ObjectId: ${
-          user.id
-        }, ${user.get("username")}`
+        `New object created with success! ObjectId: ${user.id
+        }, ${user.get("username")}, ${user.get("email")}`
       );
     }
   } catch (error) {
@@ -30,3 +29,6 @@ async function createParseUser() {
 document.getElementById("createButton").addEventListener("click", async function () {
   createParseUser();
 });
+
+
+
